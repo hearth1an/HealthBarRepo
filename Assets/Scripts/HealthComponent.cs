@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 using System;
 
 public abstract class HealthComponent : MonoBehaviour
@@ -13,19 +12,6 @@ public abstract class HealthComponent : MonoBehaviour
     private void Awake()
     {
         Health = MaxHealth;
-    }
-
-    private void ValidateHealth()
-    {
-        if (Health > MaxHealth)
-        {
-            Health = MaxHealth;
-        }
-
-        if (Health < MinHealth)
-        {
-            Health = MinHealth;
-        }
     }
 
     public void TakeDamage(float damage)
@@ -43,5 +29,4 @@ public abstract class HealthComponent : MonoBehaviour
         Health = Mathf.Clamp(Health, MinHealth, MaxHealth);
         ValueChanged?.Invoke(Health);
     }
-
 }

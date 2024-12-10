@@ -1,18 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(Slider))]
 public class SliderHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private HealthComponent _healthComponent;
 
-    // Update is called once per frame
-    void Update()
+    private Slider _slider => GetComponent<Slider>();
+
+    private float maxValue => _healthComponent.MaxHealth;
+    private float minxValue => _healthComponent.MinHealth;
+
+    private void Awake()
+    {     
+        _slider.maxValue = maxValue;
+        _slider.minValue = minxValue;
+        _slider.value = maxValue;
+
+        _healthComponent.ValueChanged += ChangeValue;
+    }    
+
+    private void ChangeValue(float value)
     {
-        
+        _slider.value = value;
     }
 }

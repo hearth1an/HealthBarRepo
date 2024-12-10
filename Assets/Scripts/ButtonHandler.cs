@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public abstract class ButtonHandler : HealthComponent
+public abstract class ButtonHandler : MonoBehaviour
 {  
     private Button _button;
 
