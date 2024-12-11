@@ -12,13 +12,13 @@ public class TextUI : MonoBehaviour
         _healthComponent.ValueChanged += UpdateText;        
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         _healthComponent.ValueChanged -= UpdateText;
     }
 
     private void UpdateText(float value)
-    {            
+    {        
         _text.text = $"{value}/{_healthComponent.MaxHealth}";
     }
 }

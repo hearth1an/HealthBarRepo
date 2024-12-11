@@ -2,16 +2,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class SmoothSliderUI : SliderHandler
+public class SliderSmoothUI : SliderHandler
 {  
     private float _delay = 1;
 
     public override void ChangeValue(float value)
-    {
-        EnableCoroutine(value);
-    }
-
-    private void EnableCoroutine(float value)
     {
         StartCoroutine(ChangeValuesmoothly(value));
     }

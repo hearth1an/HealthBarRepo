@@ -1,6 +1,6 @@
 using UnityEngine.UI;
 
-public class SimpleSliderUI : SliderHandler
+public class SliderSimpleUI : SliderHandler
 {     
     public override void ChangeValue(float value)
     {

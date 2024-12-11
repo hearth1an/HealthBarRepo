@@ -8,7 +8,7 @@ public abstract class SliderHandler : MonoBehaviour
 
     public Slider Slider { get; private set; }
 
-    protected virtual void Awake()
+    protected virtual void OnEnable()
     {
         Slider = GetComponent<Slider>();
 
@@ -19,7 +19,7 @@ public abstract class SliderHandler : MonoBehaviour
         _healthComponent.ValueChanged += ChangeValue;
     }
 
-    protected virtual void OnDestroy()
+    protected virtual void OnDisable()
     {
         _healthComponent.ValueChanged -= ChangeValue;
     }

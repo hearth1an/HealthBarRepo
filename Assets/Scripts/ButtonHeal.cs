@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class SimulateDamage : ButtonHandler
+public class ButtonHeal : ButtonHandler
 {
     [SerializeField] private HealthComponent _healthComponent;
 
-    private float _damage = 25;
+    private float _heal = 25;
 
     public override void ChangeValue()
     {
-        _healthComponent.TakeDamage(_damage);
+        _healthComponent.Heal(_heal);
     }
 }
