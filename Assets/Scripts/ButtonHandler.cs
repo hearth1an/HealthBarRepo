@@ -6,7 +6,7 @@ public abstract class ButtonHandler : MonoBehaviour
 {  
     private Button _button;
 
-    private void Awake()
+    private void OnEnable()
     {
         _button = GetComponent<Button>();
         _button.onClick.AddListener(ChangeValue);
@@ -17,6 +17,5 @@ public abstract class ButtonHandler : MonoBehaviour
         _button.onClick.RemoveListener(ChangeValue);
     }
 
-    public abstract void ChangeValue();
-   
+    public abstract void ChangeValue();   
 }

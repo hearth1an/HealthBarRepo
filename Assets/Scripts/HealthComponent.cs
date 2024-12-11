@@ -1,13 +1,12 @@
 using UnityEngine;
 using System;
 
-public abstract class HealthComponent : MonoBehaviour
+public class HealthComponent : MonoBehaviour
 {
+    public event Action<float> ValueChanged;
     public float MaxHealth { get; private set; } = 100;
     public float MinHealth { get; private set; } = 0;
     public float Health { get; private set; }
-
-    public event Action<float> ValueChanged;
 
     private void Awake()
     {

@@ -887,6 +887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 521197129}
   - component: {fileID: 521197128}
+  - component: {fileID: 521197130}
   m_Layer: 5
   m_Name: SmoothSlider
   m_TagString: Untagged
@@ -968,6 +969,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 63}
   m_SizeDelta: {x: 300, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &521197130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521197126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09db74ced737cfd4c92d07fb2a97f174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthComponent: {fileID: 1955718148}
 --- !u!1 &858638254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1202194177}
   - component: {fileID: 1202194176}
+  - component: {fileID: 1202194178}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1248,6 +1263,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1202194178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202194174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3feeb3d6a1f2847a02630d0d336aaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthComponent: {fileID: 1955718148}
 --- !u!1 &1332509720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1725,6 +1753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5869984008657ec44a1083000c4cc00a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthComponent: {fileID: 1955718148}
 --- !u!1 &2056513928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1897,3 +1926,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda0e6349b78d7c41b9cc73586924cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthComponent: {fileID: 1955718148}

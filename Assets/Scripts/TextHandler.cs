@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class TextHandler : HealthComponent
+public class TextHandler : MonoBehaviour
 {
     [SerializeField] private TMP_Text _text;    
     

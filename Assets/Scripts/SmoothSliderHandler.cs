@@ -8,18 +8,25 @@ public class SmoothSliderHandler : MonoBehaviour
     [SerializeField] private HealthComponent _healthComponent;
 
     private float _delay = 1;
-    private Slider _slider => GetComponent<Slider>();
 
-    private float maxValue => _healthComponent.MaxHealth;
-    private float minxValue => _healthComponent.MinHealth;
+    private Slider _slider;
+
+    private float MaxValue => _healthComponent.MaxHealth;
+    private float MinValue => _healthComponent.MinHealth;
 
     private void Awake()
-    {   
-        _slider.maxValue = maxValue;
-        _slider.minValue = minxValue;
-        _slider.value = maxValue;
+    {
+        _slider = GetComponent<Slider>();
+        _slider.maxValue = MaxValue;
+        _slider.minValue = MinValue;
+        _slider.value = MaxValue;
 
         _healthComponent.ValueChanged += EnableCoroutine;
+    }
+
+    private void OnDestroy()
+    {
+        _healthComponent.ValueChanged -= EnableCoroutine;
     }
 
     private void EnableCoroutine(float value)
