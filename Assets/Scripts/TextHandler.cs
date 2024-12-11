@@ -3,21 +3,22 @@ using UnityEngine;
 
 public class TextHandler : MonoBehaviour
 {
-    [SerializeField] private TMP_Text _text;    
-    
+    [SerializeField] private TMP_Text _text;
+    [SerializeField] private HealthComponent _healthComponent;
+
     private void OnEnable()
     {          
-        UpdateText(Health);
-        ValueChanged += UpdateText;        
+        UpdateText(_healthComponent.Health);
+        _healthComponent.ValueChanged += UpdateText;        
     }
 
     private void OnDestroy()
     {
-        ValueChanged -= UpdateText;
+        _healthComponent.ValueChanged -= UpdateText;
     }
 
     private void UpdateText(float value)
     {            
-        _text.text = $"{value}/{MaxHealth}";
+        _text.text = $"{value}/{_healthComponent.MaxHealth}";
     }
 }

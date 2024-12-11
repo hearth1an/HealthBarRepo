@@ -2,33 +2,27 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
-public class SliderHandler : MonoBehaviour
+public abstract class SliderHandler : MonoBehaviour
 {
     [SerializeField] private HealthComponent _healthComponent;
 
-    private Slider _slider;
+    public Slider Slider { get; private set; }
 
-    private float maxValue => _healthComponent.MaxHealth;
-    private float minxValue => _healthComponent.MinHealth;
-
-    private void Awake()
+    protected virtual void Awake()
     {
-        _slider = GetComponent<Slider>();
+        Slider = GetComponent<Slider>();
 
-        _slider.maxValue = maxValue;
-        _slider.minValue = minxValue;
-        _slider.value = maxValue;
+        Slider.maxValue = _healthComponent.MaxHealth;
+        Slider.minValue = _healthComponent.MinHealth;
+        Slider.value = _healthComponent.MaxHealth;
 
         _healthComponent.ValueChanged += ChangeValue;
     }
 
-    private void OnDestroy()
+    protected virtual void OnDestroy()
     {
         _healthComponent.ValueChanged -= ChangeValue;
     }
 
-    private void ChangeValue(float value)
-    {
-        _slider.value = value;
-    }
+    public abstract void ChangeValue(float value);    
 }
